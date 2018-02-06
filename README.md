@@ -13,3 +13,11 @@ You need to map your working folder to /wrk in order for xsltproc to see your fi
 example:
 
     docker run --rm -v "$PWD:/wrk" svilstrup/xsltproc transform_svn_log.xslt svnlog.xml >svn-log.csv
+
+## Docker hub
+
+This image is publicly [available on docker hub](https://hub.docker.com/r/svilstrup/xsltproc/)
+
+## Source
+
+The source for this docker image [is in github](https://github.com/svilstrup/docker-xsltproc)
