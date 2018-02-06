@@ -1,10 +1,10 @@
 #To build this image:
 #
-#    docker build -t ${PWD##*/}:latest .
+#    docker build -t svilstrup/xsltproc .
 #
 #To run it, use this command:
 #
-#    docker run -it --rm -v $PWD:/app ${PWD##*/}:latest
+#    docker run --rm -v "$PWD:/wrk" svilstrup/xsltproc
 #
 FROM alpine:3.7
 RUN apk add --no-cache libxslt
@@ -13,8 +13,10 @@ RUN apk add --no-cache libxslt
 # There could potentially be malicious code in the package manager repo
 RUN addgroup -g 1000 app \
     && adduser -u 1000 -G app -s /bin/sh -D app
+
 # Create the working folder and change owner
-WORKDIR /app
-RUN chown -R app:app /app  
+WORKDIR /wrk
+RUN chown -R app:app /wrk
+USER app  
 
 ENTRYPOINT ["/usr/bin/xsltproc"]
