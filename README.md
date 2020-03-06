@@ -8,16 +8,4 @@ It runs as a non-root user called 'app' with low privileges
 
 You need to map your working folder to /wrk in order for xsltproc to see your files
 
-    docker run --rm -v "$PWD:/wrk" svilstrup/xsltproc <xsltproc options>
-
-example:
-
-    docker run --rm -v "$PWD:/wrk" svilstrup/xsltproc transform_svn_log.xslt svnlog.xml >svn-log.csv
-
-## Docker hub
-
-This image is publicly [available on docker hub](https://hub.docker.com/r/svilstrup/xsltproc/)
-
-## Source
-
-The source for this docker image [is in github](https://github.com/svilstrup/docker-xsltproc)
+    docker run --rm -v "$PWD:/wrk" enalean/xsltproc <xsltproc options>
