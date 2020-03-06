@@ -6,7 +6,7 @@
 #
 #    docker run --rm -v "$PWD:/wrk" svilstrup/xsltproc
 #
-FROM alpine:3.7
+FROM alpine:3.11.3
 RUN apk add --no-cache libxslt
 
 # Create an 'app' user, so we don't run the install as root. 
