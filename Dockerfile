@@ -7,7 +7,7 @@
 #    docker run --rm -v "$PWD:/wrk" svilstrup/xsltproc
 #
 FROM alpine:3.11.3
-RUN apk add --no-cache libxslt
+RUN apk add --no-cache libxslt make
 
 # Create an 'app' user, so we don't run the install as root. 
 # There could potentially be malicious code in the package manager repo
@@ -19,4 +19,3 @@ WORKDIR /wrk
 RUN chown -R app:app /wrk
 USER app  
 
-ENTRYPOINT ["/usr/bin/xsltproc"]

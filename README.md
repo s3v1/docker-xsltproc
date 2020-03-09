@@ -8,4 +8,4 @@ It runs as a non-root user called 'app' with low privileges
 
 You need to map your working folder to /wrk in order for xsltproc to see your files
 
-    docker run --rm -v "$PWD:/wrk" enalean/xsltproc <xsltproc options>
+    docker run --rm -v "$PWD:/wrk" enalean/xsltproc xsltproc <xsltproc options>
