@@ -1,8 +1,8 @@
 tasks:
   - init: |
       echo 'Init: Build project'
-      docker build -t svilstrup/xsltproc .
+      devops/build.sh
     command: |
       echo 'Command: Quick version test'
-      docker run --rm -v "$PWD:/wrk" svilstrup/xsltproc --version
+      devops/test.sh
       
